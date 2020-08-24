@@ -36,3 +36,14 @@ it('should decrease the displayed value when click on Decrease button', async ()
 
 	expect(actualValue).toBe(expectedValue);
 })
+
+it('should increase the value when click on Increase button', async () => {
+	const expectedValue = 1;
+	const wrapper = shallowMount(Counter);
+	const button = wrapper.find('.increase');
+
+	await button.trigger('click');
+	const actualValue = wrapper.vm.value
+
+	expect(actualValue).toBe(expectedValue);
+})
