@@ -4,14 +4,18 @@
 		<div class="bottom">
 			<OnOff />
 		</div>
+		<div class="">
+			<Counter/>
+		</div>
 	</div>
 </template>
 
 <script>
 import OnOff from './onoff/OnOff.vue';
+import Counter from './counter/Counter.vue';
 export default {
 	name: 'app',
-	components: { OnOff }
+	components: { OnOff, Counter }
 }
 </script>
 
