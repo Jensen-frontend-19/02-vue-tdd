@@ -1,9 +1,11 @@
 <template lang="html">
 	<div>
-		<div :class="{option: true, selected: firstSelected}"
-			@click="selectFirst"> First </div>
-		<div :class="{option: true, selected: secondSelected}"
-			@click="selectSecond"> Second </div>
+		<div v-for="item in items"
+			@click="handleClick(item)"
+			:class="{ option: true, selected: selectedId === item.id }"
+			:key="item.id">
+			{{ item.text }}
+		</div>
 	</div>
 </template>
 
@@ -11,18 +13,19 @@
 export default {
 	data: function() {
 		return {
-			firstSelected: true,
-			secondSelected: false,
+			items: [
+				{ id: 1, text: 'First', value: 'A' },
+				{ id: 2, text: 'Second', value: 'B' },
+				{ id: 3, text: 'Third', value: 'C' },
+				{ id: 4, text: 'Fourth', value: 'D' },
+				{ id: 101, text: 'First', value: 'Q' }
+			],
+			selectedId: 1
 		}
 	},
 	methods: {
-		selectFirst() {
-			this.firstSelected = true;
-			this.secondSelected = false;
-		},
-		selectSecond() {
-			this.firstSelected = false;
-			this.secondSelected = true;
+		handleClick(item) {
+			this.selectedId = item.id;
 		}
 	}
 }
