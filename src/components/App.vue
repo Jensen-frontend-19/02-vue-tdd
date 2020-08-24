@@ -8,6 +8,7 @@
 			<Counter/>
 		</div>
 		<Options/>
+		<Visibility />
 	</div>
 </template>
 
@@ -15,9 +16,10 @@
 import OnOff from './onoff/OnOff.vue';
 import Counter from './counter/Counter.vue';
 import Options from './options/Options.vue';
+import Visibility from './usefulStuff/Visibility.vue';
 export default {
 	name: 'app',
-	components: { OnOff, Counter, Options }
+	components: { OnOff, Counter, Options, Visibility }
 }
 </script>
 
