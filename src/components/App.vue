@@ -7,15 +7,17 @@
 		<div class="">
 			<Counter/>
 		</div>
+		<Options/>
 	</div>
 </template>
 
 <script>
 import OnOff from './onoff/OnOff.vue';
 import Counter from './counter/Counter.vue';
+import Options from './options/Options.vue';
 export default {
 	name: 'app',
-	components: { OnOff, Counter }
+	components: { OnOff, Counter, Options }
 }
 </script>
 
