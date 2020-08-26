@@ -17,7 +17,7 @@ export default {
 			// Alternativt sätt:
 			// 'abcdefghijklmnopqrstuvwxyzåäö0123...'
 			const pattern = /[a-zA-ZåäöÅÄÖ0-9]/;
-			if( pattern.test(keyEvent.key) ) {
+			if( keyEvent.key.length === 1 && pattern.test(keyEvent.key) ) {
 				this.message = 'You pressed ' + keyEvent.key;
 			} else {
 				this.message = '';

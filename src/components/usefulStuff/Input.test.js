@@ -26,13 +26,10 @@ it('should not display message on Shift', async () => {
 	const wrapper = shallowMount(Input);
 	const input = wrapper.find('input');
 
-	// DOES NOT WORK
-	// HOMEWORK TO WEDNESDAY!
-	await input.trigger('keyup.shift', {
-		shiftKey: true
+	await input.trigger('keyup', {
+		key: 'shift'
 	});
 
 	let content = wrapper.find('p').text();
-	// expect(content).toBe('');
-	expect(true).toBe(false);
+	expect(content).toBe('');
 })
